@@ -10,7 +10,7 @@ $str = file_get_contents($file_name);
 $num_word_strs = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 $num_strs = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-function getCaliberationDigit(string $line): int {
+function get_calibration_digit(string $line): int {
   global $num_word_strs;
   global $num_strs;
   $first_digit = '';
@@ -47,7 +47,7 @@ function getCaliberationDigit(string $line): int {
   return (int)($first_digit . $last_digit);
 }
 
-$nums = array_map(fn($value) => getCaliberationDigit($value), explode("\n", $str));
+$nums = array_map(fn($value) => get_calibration_digit($value), explode("\n", $str));
 
 echo array_reduce($nums, fn($carry, $item) => $carry + $item, 0) . PHP_EOL;
 

@@ -7,7 +7,7 @@ $file_name = $argv[1];
 
 $str = file_get_contents($file_name);
 
-function getCaliberationDigit(string $line): int {
+function get_calibration_digit(string $line): int {
   $first_digit = '';
   $last_digit = '';
 
@@ -29,7 +29,7 @@ function getCaliberationDigit(string $line): int {
   return (int)($first_digit . $last_digit);
 }
 
-$nums = array_map(fn($value) => getCaliberationDigit($value), explode("\n", $str));
+$nums = array_map(fn($value) => get_calibration_digit($value), explode("\n", $str));
 
 echo array_reduce($nums, fn($carry, $item) => $carry + $item, 0) . PHP_EOL;
 
