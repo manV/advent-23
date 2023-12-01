@@ -1,0 +1,4 @@
+- `php 1.php 1sample.txt`
+- `php 1.php input.txt`
+- `php 2.php 2sample.txt`
+- `php 2.php input.txt`
